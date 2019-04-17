@@ -18,7 +18,9 @@ const styles = StyleSheet.create({
   }
 });
 
-type Props = {};
+type Props = {
+  url: String
+};
 export default class App extends Component<Props> {
   // static navigationOptions = ({ navigation }) => {
   //   return {
@@ -36,8 +38,7 @@ export default class App extends Component<Props> {
   };
 
   render() {
-    const { navigation } = this.props;
-    const url = navigation.getParam("url");
+    const { url } = this.props;
     return (
       <WebView
         style={styles.container}

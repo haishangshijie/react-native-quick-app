@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList, StyleSheet, ToastAndroid } from "react-native";
 import { navigate } from "../Navigator";
 import TextCell from "../Common/TextCell";
 
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 
 type Props = {};
 export default class Form extends Component<Props> {
-  showAbility = item => {
+  showAbility = item => () => {
     if (item.page) {
       navigate(item.page);
     } else {
@@ -29,12 +29,13 @@ export default class Form extends Component<Props> {
 
   render() {
     const data = [
-      { id: "1", title: "input", page: "Swipe" },
-      { id: "2", title: "picker", page: "" },
-      { id: "3", title: "select", page: "" },
-      { id: "4", title: "slider", page: "" },
-      { id: "5", title: "switch", page: "" },
-      { id: "5", title: "textarea", page: "" }
+      { id: "1", title: "input", page: "Input" },
+      { id: "2", title: "label", page: "Label" },
+      { id: "3", title: "picker", page: "" },
+      { id: "4", title: "select", page: "" },
+      { id: "5", title: "slider", page: "SliderInput" },
+      { id: "6", title: "switch", page: "SwitchInput" },
+      { id: "7", title: "textarea", page: "Textarea" }
     ];
     return (
       <FlatList

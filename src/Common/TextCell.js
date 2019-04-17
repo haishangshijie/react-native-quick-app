@@ -10,9 +10,12 @@ import {
 
 const styles = StyleSheet.create({
   container: {
+    height: 50,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: "#F5FCFF",
+    borderBottomColor: "#ccc",
+    borderBottomWidth: 1
   },
   text: {
     fontSize: 18,
@@ -23,7 +26,7 @@ const styles = StyleSheet.create({
 
 type Props = {
   title: String,
-  onCellClick: () => {}
+  onCellClick: () => void
 };
 export default class TextCell extends Component<Props> {
   constructor(props: Props) {
@@ -32,7 +35,8 @@ export default class TextCell extends Component<Props> {
   }
 
   handleCellClick = () => {
-    if (this.props.onCellClick) {
+    const { onCellClick } = this.props;
+    if (onCellClick) {
       onCellClick();
     }
   };

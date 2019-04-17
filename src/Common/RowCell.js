@@ -4,31 +4,32 @@ import Icon from "react-native-vector-icons/Feather";
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: "center",
+    width: 160,
+    height: 240,
     alignItems: "center",
     backgroundColor: "#F5FCFF"
   },
-  rightView: {
-    flex: 1,
-    padding: 10,
-    flexDirection: "row"
+  icon: {
+    padding: 10
   },
   title: {
     fontSize: 18,
-    color: "#333"
+    color: "#333",
+    marginBottom: 10
   },
   typeView: {
     flexDirection: "row"
   },
   type: {
+    height: 18,
     fontSize: 12,
     color: "#666",
     backgroundColor: "#999",
-    padding: 3
+    paddingHorizontal: 5,
+    marginRight: 10
   },
   price: {
-    fontSize: 18,
+    fontSize: 20,
     color: "red"
   }
 });
@@ -43,17 +44,16 @@ export default class RowCell extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Icon name="film" size={50} color="black" />
+        <Icon style={styles.icon} name="film" size={100} color="black" />
         <Text style={styles.title}>
-          The Avengers: End Game 复仇者联盟: 终局之战 The Avengers: End Game
-          复仇者联盟: 终局之战 The Avengers: End Game 复仇者联盟: 终局之战
+          The Avengers: End Game 复仇者联盟: 终局之战
         </Text>
         <View style={styles.typeView}>
           <Text style={styles.type}>电影</Text>
           <Text style={styles.type}>漫威</Text>
-          <Text style={styles.type}>超级英雄</Text>
+          <Text style={styles.type}>十年巨制</Text>
         </View>
-        <Text style={styles.price}>¥ 999.99</Text>
+        <Text style={styles.price}>{`¥ 999.99              `}</Text>
       </View>
     );
   }

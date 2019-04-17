@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 
 type Props = {};
 export default class Basic extends Component<Props> {
-  showAbility = item => {
+  showAbility = item => () => {
     if (item.page) {
       navigate(item.page);
     } else {
@@ -29,11 +29,11 @@ export default class Basic extends Component<Props> {
 
   render() {
     const data = [
-      { id: "1", title: "image", page: "Swipe" },
+      { id: "1", title: "image", page: "Image" },
       { id: "2", title: "progress", page: "" },
       { id: "3", title: "rating", page: "" },
       { id: "4", title: "span", page: "" },
-      { id: "5", title: "text", page: "" }
+      { id: "5", title: "text", page: "Label" }
     ];
     return (
       <FlatList

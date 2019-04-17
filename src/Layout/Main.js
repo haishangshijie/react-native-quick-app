@@ -5,26 +5,31 @@ import MainCell from "../Common/MainCell";
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#F5FCFF"
   },
   flatlist: {
-    flex: 1,
     margin: 10
   },
   intro: {
     fontSize: 16,
     color: "#666",
-    margin: 30
+    margin: 30,
+    marginTop: 50
   }
 });
 
 type Props = {};
 export default class App extends Component<Props> {
-  showAbility = item => {
-    if (item) {
-      navigate(item.page);
+  showAbility = item => () => {
+    if (item.page) {
+      if (item.page === "WebView") {
+        navigate("WebView", { url: "https://m.jd.com" });
+      } else {
+        navigate(item.page);
+      }
     } else {
       ToastAndroid.show("正在开发中,敬请期待...", 1);
     }
@@ -42,16 +47,18 @@ export default class App extends Component<Props> {
 
   render() {
     const data = [
-      { id: "1", title: "通用组件", icon: "component", page: "" },
-      { id: "2", title: "通用组件", icon: "component", page: "" },
-      { id: "3", title: "通用组件", icon: "component", page: "" },
-      { id: "4", title: "通用组件", icon: "component", page: "" },
-      { id: "5", title: "通用组件", icon: "component", page: "" },
-      { id: "6", title: "通用组件", icon: "component", page: "" }
+      { id: "1", title: "JD 京东", icon: "component", page: "WebView" },
+      { id: "2", title: "定时器", icon: "component", page: "Timer" },
+      {
+        id: "3",
+        title: "列表下拉刷新上拉加载",
+        icon: "component",
+        page: "Refresh"
+      }
     ];
     return (
       <View style={styles.container}>
-        <Text style={styles.intro}>以下讲展示快应用 常用布局, 仅供参考</Text>
+        <Text style={styles.intro}>以下展示快应用 常用布局, 仅供参考</Text>
         <FlatList
           style={styles.flatlist}
           renderItem={this.renderItem}

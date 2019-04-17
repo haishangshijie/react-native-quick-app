@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList, StyleSheet, ToastAndroid } from "react-native";
 import { navigate } from "../Navigator";
 import TextCell from "../Common/TextCell";
 
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 
 type Props = {};
 export default class Common extends Component<Props> {
-  showAbility = item => {
+  showAbility = item => () => {
     if (item.page) {
       navigate(item.page);
     } else {

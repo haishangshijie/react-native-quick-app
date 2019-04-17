@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
+import V from "../Variables";
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    width: V.V.pgWidth - 30,
     height: 44,
     marginBottom: 20,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "red"
+    backgroundColor: "white"
   },
   text: {
     fontSize: 20,
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
 type Props = {
   icon: String,
   title: String,
-  onCellClick: () => {}
+  onCellClick: () => void
 };
 export default class MainCell extends Component<Props> {
   constructor(props: Props) {
@@ -31,21 +32,19 @@ export default class MainCell extends Component<Props> {
   }
 
   handleCellClick = () => {
-    if (this.props.onCellClick) {
+    const { onCellClick } = this.props;
+    if (onCellClick) {
       onCellClick();
     }
   };
 
   render() {
     const { icon, title } = this.props;
-    console.log("title ", title);
     return (
-      <View style={styles.container}>
-        <TouchableOpacity onPress={this.handleCellClick}>
-          {/* <Icon name={icon} size={20} color='#333' /> */}
-          <Text style={styles.text}>{title}</Text>
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity style={styles.container} onPress={this.handleCellClick}>
+        {/* <Icon name={icon} size={20} color='#333' /> */}
+        <Text style={styles.text}>{title}</Text>
+      </TouchableOpacity>
     );
   }
 }

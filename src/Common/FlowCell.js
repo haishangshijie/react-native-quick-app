@@ -1,36 +1,44 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
+import V from "../Variables";
+
+const itemWidth = V.V.pgWidthHalf - 15;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    margin: 10,
-    justifyContent: "center",
-    alignItems: "center",
+    width: itemWidth,
+    marginLeft: 10,
+    marginBottom: 10,
     backgroundColor: "#F5FCFF"
   },
-  rightView: {
-    flex: 1,
-    padding: 10,
-    flexDirection: "row"
+  icon: {
+    // paddingLeft: (itemWidth - 100) / 2,
+    alignSelf: "center",
+    paddingVertical: 15
   },
   title: {
     fontSize: 18,
-    color: "#333"
+    color: "#333",
+    paddingHorizontal: 10,
+    marginBottom: 10
   },
   typeView: {
-    flexDirection: "row"
+    flexDirection: "row",
+    paddingHorizontal: 10
   },
   type: {
+    height: 18,
     fontSize: 12,
     color: "#666",
     backgroundColor: "#999",
-    padding: 3
+    paddingHorizontal: 5,
+    marginRight: 10
   },
   price: {
-    fontSize: 18,
-    color: "red"
+    fontSize: 20,
+    color: "red",
+    paddingHorizontal: 10
   }
 });
 
@@ -44,17 +52,16 @@ export default class FlowCell extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Icon name="film" size={50} color="black" />
+        <Icon style={styles.icon} name="film" size={100} color="black" />
         <Text style={styles.title}>
-          The Avengers: End Game 复仇者联盟: 终局之战 The Avengers: End Game
-          复仇者联盟: 终局之战 The Avengers: End Game 复仇者联盟: 终局之战
+          The Avengers: End Game 复仇者联盟: 终局之战
         </Text>
         <View style={styles.typeView}>
           <Text style={styles.type}>电影</Text>
           <Text style={styles.type}>漫威</Text>
-          <Text style={styles.type}>超级英雄</Text>
+          <Text style={styles.type}>十年巨制</Text>
         </View>
-        <Text style={styles.price}>¥ 999.99</Text>
+        <Text style={styles.price}>{`¥ 999.99              `}</Text>
       </View>
     );
   }

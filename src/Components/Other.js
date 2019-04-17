@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList, StyleSheet, ToastAndroid } from "react-native";
 import { navigate } from "../Navigator";
 import TextCell from "../Common/TextCell";
 
@@ -13,9 +13,13 @@ const styles = StyleSheet.create({
 
 type Props = {};
 export default class Other extends Component<Props> {
-  showAbility = item => {
+  showAbility = item => () => {
     if (item.page) {
-      navigate(item.page);
+      if (item.page === "WebView") {
+        navigate("WebView", { url: "https://m.jd.com" });
+      } else {
+        navigate(item.page);
+      }
     } else {
       ToastAndroid.show("正在开发中,敬请期待...", 1);
     }
@@ -28,7 +32,7 @@ export default class Other extends Component<Props> {
   );
 
   render() {
-    const data = [{ id: "1", title: "Web", page: "Swipe" }];
+    const data = [{ id: "1", title: "Web", page: "WebView" }];
     return (
       <FlatList
         style={styles.flatlist}

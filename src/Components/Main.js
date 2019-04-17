@@ -1,29 +1,38 @@
 import React, { Component } from "react";
-import { Text, View, FlatList, StyleSheet, ToastAndroid } from "react-native";
+import {
+  Text,
+  View,
+  FlatList,
+  StyleSheet,
+  ToastAndroid,
+  Dimensions
+} from "react-native";
 import { navigate } from "../Navigator";
 import MainCell from "../Common/MainCell";
+import V from "../Variables";
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#F5FCFF"
   },
   flatlist: {
-    flex: 1,
     margin: 10
   },
   intro: {
     fontSize: 16,
     color: "#666",
-    margin: 30
+    margin: 30,
+    marginTop: 50
   }
 });
 
 type Props = {};
 export default class Main extends Component<Props> {
-  showAbility = item => {
-    if (item) {
+  showAbility = item => () => {
+    if (item.page) {
       navigate(item.page);
     } else {
       ToastAndroid.show("正在开发中,敬请期待...", 1);
@@ -51,7 +60,7 @@ export default class Main extends Component<Props> {
     ];
     return (
       <View style={styles.container}>
-        <Text style={styles.intro}>以下讲展示快应用组件相关能力, 仅供参考</Text>
+        <Text style={styles.intro}>以下展示快应用组件相关能力, 仅供参考</Text>
         <FlatList
           style={styles.flatlist}
           renderItem={this.renderItem}

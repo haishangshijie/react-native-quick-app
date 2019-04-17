@@ -16,11 +16,18 @@ import Container from "../Components/Container";
 import Div from "../Components/Div";
 import Form from "../Components/Form";
 import Image from "../Components/Image";
+import Input from "../Components/Input";
+import Label from "../Components/Label";
 import List from "../Components/List";
 import Other from "../Components/Other";
+import Refresh from "../Components/Refresh";
+import SliderInput from "../Components/SliderInput";
 import Swipe from "../Components/Swipe";
+import SwitchInput from "../Components/SwitchInput";
+import Textarea from "../Components/Textarea";
 
 // Layout
+import Timer from "../Layout/Timer";
 
 export default createStackNavigator(
   {
@@ -39,9 +46,18 @@ export default createStackNavigator(
     Div: paramsToProps(Div),
     Form: paramsToProps(Form),
     Image: paramsToProps(Image),
+    Input: paramsToProps(Input),
+    Label: paramsToProps(Label),
     List: paramsToProps(List),
     Other: paramsToProps(Other),
-    Swipe: paramsToProps(Swipe)
+    Refresh: paramsToProps(Refresh),
+    SliderInput: paramsToProps(SliderInput),
+    Swipe: paramsToProps(Swipe),
+    SwitchInput: paramsToProps(SwitchInput),
+    Textarea: paramsToProps(Textarea),
+
+    // Layout
+    Timer: paramsToProps(Timer)
   },
   {
     initialRouteName: "AppTabbar",

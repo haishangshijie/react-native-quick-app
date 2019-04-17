@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 
 type Props = {};
 export default class Container extends Component<Props> {
-  showAbility = item => {
+  showAbility = item => () => {
     if (item.page) {
       navigate(item.page);
     } else {
@@ -29,10 +29,10 @@ export default class Container extends Component<Props> {
 
   render() {
     const data = [
-      { id: "1", title: "div", page: "Swipe" },
-      { id: "2", title: "list", page: "" },
-      { id: "3", title: "list-item", page: "" },
-      { id: "4", title: "refresh", page: "" },
+      { id: "1", title: "div", page: "Div" },
+      { id: "2", title: "list", page: "List" },
+      { id: "3", title: "list-item", page: "List" },
+      { id: "4", title: "refresh", page: "Refresh" },
       { id: "5", title: "richtext", page: "" },
       { id: "6", title: "stack", page: "" },
       { id: "7", title: "swiper", page: "" },

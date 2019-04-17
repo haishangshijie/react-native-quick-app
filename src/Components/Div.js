@@ -15,6 +15,7 @@ import {
   TouchableOpacity,
   ToastAndroid
 } from "react-native";
+import V from "../Variables";
 
 const styles = StyleSheet.create({
   container: {
@@ -24,17 +25,20 @@ const styles = StyleSheet.create({
     backgroundColor: "#F5FCFF"
   },
   text: {
-    fontSize: 16,
+    flex: 1,
+    fontSize: 18,
     textAlign: "center",
     color: "white"
   },
   viewRow: {
-    height: 24,
+    // width: V.V.pgWidth,
+    height: 30,
     marginBottom: 15,
     flexDirection: "row"
   },
   viewLine: {
-    height: 44
+    width: V.V.pgWidth,
+    height: 60
   },
   bgGreen: {
     backgroundColor: "green"

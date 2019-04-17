@@ -5,6 +5,7 @@ import Icon from "react-native-vector-icons/Feather";
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#F5FCFF"
@@ -16,8 +17,13 @@ export default class Image extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Icon name="sunrise" size={30} color="red" />
-        <Icon name="sunset" size={30} color="grey" />
+        <Icon
+          style={{ marginBottom: 50 }}
+          name="sunrise"
+          size={80}
+          color="red"
+        />
+        <Icon name="sunset" size={80} color="grey" />
       </View>
     );
   }
