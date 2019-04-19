@@ -18,6 +18,10 @@ export function setNavigator(container: NavigationContainerComponent) {
   navigationContainer = container;
 }
 
+export function getNavigator() {
+  return navigationContainer;
+}
+
 export function setNavigationParams(params: any) {
   navigationParams = params;
 }
@@ -127,6 +131,7 @@ export function replacePrevious(routeName: string, params?: NavigationParams) {
 
 export default {
   setNavigator,
+  getNavigator,
   setNavigationParams,
   getNavigationParams,
   navigate,

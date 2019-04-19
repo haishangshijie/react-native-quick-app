@@ -5,7 +5,15 @@ import AppTabbar from "./AppTabbar";
 
 // Apis
 import AppInfo from "../Apis/AppInfo";
+import Ability from "../Apis/Ability";
+import Clipboards from "../Apis/Clipboards";
 import DeviceInfo from "../Apis/DeviceInfo";
+import Location from "../Apis/Location";
+import NetWorkInfo from "../Apis/NetWorkInfo";
+import Qrcode from "../Apis/Qrcode";
+// import QRScanner from "../Apis/QRScanner";
+import Storage from "../Apis/Storage";
+import Weather from "../Apis/Weather";
 import Web from "../Apis/Web";
 import WebView from "../Apis/WebView";
 
@@ -35,7 +43,15 @@ export default createStackNavigator(
 
     // Apis
     AppInfo: paramsToProps(AppInfo),
+    Ability: paramsToProps(Ability),
+    Clipboards: paramsToProps(Clipboards),
     DeviceInfo: paramsToProps(DeviceInfo),
+    Location: paramsToProps(Location),
+    NetWorkInfo: paramsToProps(NetWorkInfo),
+    Qrcode: paramsToProps(Qrcode),
+    // QRScanner: paramsToProps(QRScanner),
+    Storage: paramsToProps(Storage),
+    Weather: paramsToProps(Weather),
     Web: paramsToProps(Web),
     WebView: paramsToProps(WebView),
 

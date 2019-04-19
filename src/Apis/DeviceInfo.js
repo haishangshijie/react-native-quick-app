@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 44,
     margin: 15,
-    backgroundColor: "blue",
+    backgroundColor: "green",
     justifyContent: "center"
   },
   btnText: {
