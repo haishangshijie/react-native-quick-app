@@ -45,15 +45,14 @@ export default class App extends Component<Props> {
     const data = [
       { id: "0", title: "应用信息", icon: "component", page: "AppInfo" },
       { id: "1", title: "设备信息", icon: "component", page: "DeviceInfo" },
-      { id: "2", title: "界面交互", icon: "component", page: "" },
+      { id: "2", title: "界面交互", icon: "component", page: "Interaction" },
       { id: "3", title: "网络访问", icon: "component", page: "Weather" },
       { id: "4", title: "网页网址", icon: "component", page: "Web" },
-      { id: "5", title: "文件数据", icon: "component", page: "Storage" },
+      { id: "5", title: "存储数据", icon: "component", page: "Storage" },
       { id: "6", title: "系统能力", icon: "component", page: "Ability" },
-      { id: "7", title: "安全", icon: "component", page: "" },
+      { id: "7", title: "安全算法", icon: "component", page: "Security" },
       { id: "8", title: "声音音频", icon: "component", page: "" },
-      { id: "9", title: "厂商服务", icon: "component", page: "" },
-      { id: "10", title: "第三方服务", icon: "component", page: "" }
+      { id: "9", title: "厂商服务", icon: "component", page: "Service" }
     ];
     return (
       <View style={styles.container}>

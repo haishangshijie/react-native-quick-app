@@ -22,6 +22,11 @@ const styles = StyleSheet.create({
 
 type Props = {};
 export default class SwitchInput extends Component<Props> {
+  static navigationOptions = {
+    title: "Switch",
+    gesturesEnabled: true
+  };
+
   constructor(props: Props) {
     super(props);
     this.state = {

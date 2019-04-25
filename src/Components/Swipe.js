@@ -48,6 +48,11 @@ const styles = StyleSheet.create({
 
 type Props = {};
 export default class Swipe extends Component<Props> {
+  static navigationOptions = {
+    title: "Swipe",
+    gesturesEnabled: true
+  };
+
   constructor(props: Props) {
     super(props);
     this.state = {

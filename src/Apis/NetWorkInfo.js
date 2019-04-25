@@ -36,6 +36,11 @@ const styles = StyleSheet.create({
 
 type Props = {};
 export default class NetworkInfo extends Component<Props> {
+  static navigationOptions = {
+    title: "网络状态",
+    gesturesEnabled: true
+  };
+
   constructor(props: Props) {
     super(props);
     this.state = {

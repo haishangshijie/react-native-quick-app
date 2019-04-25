@@ -37,6 +37,11 @@ const styles = StyleSheet.create({
 
 type Props = {};
 export default class Location extends Component<Props> {
+  static navigationOptions = {
+    title: "地理位置",
+    gesturesEnabled: true
+  };
+
   constructor(props: Props) {
     super(props);
     this.state = {

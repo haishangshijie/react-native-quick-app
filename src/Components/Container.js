@@ -6,13 +6,18 @@ import TextCell from "../Common/TextCell";
 const styles = StyleSheet.create({
   flatlist: {
     flex: 1,
-    margin: 10,
+    padding: 10,
     backgroundColor: "#F5FCFF"
   }
 });
 
 type Props = {};
 export default class Container extends Component<Props> {
+  static navigationOptions = {
+    title: "容器组件",
+    gesturesEnabled: true
+  };
+
   showAbility = item => () => {
     if (item.page) {
       navigate(item.page);
@@ -36,9 +41,9 @@ export default class Container extends Component<Props> {
       { id: "5", title: "richtext", page: "" },
       { id: "6", title: "stack", page: "" },
       { id: "7", title: "swiper", page: "" },
-      { id: "8", title: "tabs", page: "" },
-      { id: "9", title: "tab-bar", page: "" },
-      { id: "10", title: "tab-content", page: "" }
+      { id: "8", title: "tabs", page: "ScrollTabbar" },
+      { id: "9", title: "tab-bar", page: "ScrollTabbar" },
+      { id: "10", title: "tab-content", page: "ScrollTabbar" }
     ];
     return (
       <FlatList

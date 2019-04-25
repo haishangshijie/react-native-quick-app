@@ -6,12 +6,19 @@ import AppTabbar from "./AppTabbar";
 // Apis
 import AppInfo from "../Apis/AppInfo";
 import Ability from "../Apis/Ability";
+import AlertAndroid from "../Apis/AlertAndroid";
 import Clipboards from "../Apis/Clipboards";
 import DeviceInfo from "../Apis/DeviceInfo";
+import Interaction from "../Apis/Interaction";
 import Location from "../Apis/Location";
 import NetWorkInfo from "../Apis/NetWorkInfo";
+import OpenUrl from "../Apis/OpenUrl";
 import Qrcode from "../Apis/Qrcode";
 // import QRScanner from "../Apis/QRScanner";
+import Security from "../Apis/Security";
+import Sensor from "../Apis/Sensor";
+import Service from "../Apis/Service";
+import ShareAndroid from "../Apis/ShareAndroid";
 import Storage from "../Apis/Storage";
 import Weather from "../Apis/Weather";
 import Web from "../Apis/Web";
@@ -29,6 +36,7 @@ import Label from "../Components/Label";
 import List from "../Components/List";
 import Other from "../Components/Other";
 import Refresh from "../Components/Refresh";
+import ScrollTabbar from "../Components/ScrollTabbar";
 import SliderInput from "../Components/SliderInput";
 import Swipe from "../Components/Swipe";
 import SwitchInput from "../Components/SwitchInput";
@@ -44,12 +52,19 @@ export default createStackNavigator(
     // Apis
     AppInfo: paramsToProps(AppInfo),
     Ability: paramsToProps(Ability),
+    AlertAndroid: paramsToProps(AlertAndroid),
     Clipboards: paramsToProps(Clipboards),
     DeviceInfo: paramsToProps(DeviceInfo),
+    Interaction: paramsToProps(Interaction),
     Location: paramsToProps(Location),
     NetWorkInfo: paramsToProps(NetWorkInfo),
+    OpenUrl: paramsToProps(OpenUrl),
     Qrcode: paramsToProps(Qrcode),
     // QRScanner: paramsToProps(QRScanner),
+    Security: paramsToProps(Security),
+    Sensor: paramsToProps(Sensor),
+    Service: paramsToProps(Service),
+    ShareAndroid: paramsToProps(ShareAndroid),
     Storage: paramsToProps(Storage),
     Weather: paramsToProps(Weather),
     Web: paramsToProps(Web),
@@ -67,6 +82,7 @@ export default createStackNavigator(
     List: paramsToProps(List),
     Other: paramsToProps(Other),
     Refresh: paramsToProps(Refresh),
+    ScrollTabbar: paramsToProps(ScrollTabbar),
     SliderInput: paramsToProps(SliderInput),
     Swipe: paramsToProps(Swipe),
     SwitchInput: paramsToProps(SwitchInput),
@@ -77,7 +93,7 @@ export default createStackNavigator(
   },
   {
     initialRouteName: "AppTabbar",
-    headerMode: "none",
+    headerMode: "screen",
     cardStyle: {
       shadowColor: "transparent"
     }

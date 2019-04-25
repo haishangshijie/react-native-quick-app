@@ -51,6 +51,11 @@ const styles = StyleSheet.create({
 
 type Props = {};
 export default class Weather extends Component<Props> {
+  static navigationOptions = {
+    title: "网络访问",
+    gesturesEnabled: true
+  };
+
   constructor(props: Props) {
     super(props);
     this.state = {

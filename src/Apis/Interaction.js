@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FlatList, StyleSheet, ToastAndroid } from "react-native";
+import { Vibration, FlatList, StyleSheet, ToastAndroid } from "react-native";
 import { navigate } from "../Navigator";
 import TextCell from "../Common/TextCell";
 
@@ -12,15 +12,21 @@ const styles = StyleSheet.create({
 });
 
 type Props = {};
-export default class Common extends Component<Props> {
+export default class Interaction extends Component<Props> {
   static navigationOptions = {
-    title: "通用组件",
+    title: "页面交互",
     gesturesEnabled: true
   };
 
   showAbility = item => () => {
     if (item.page) {
-      navigate(item.page);
+      if (item.page === "WebView") {
+        navigate("WebView", { url: "https://m.jd.com" });
+      } else {
+        navigate(item.page);
+      }
+    } else if (item.id === "5") {
+      Vibration.vibrate(500);
     } else {
       ToastAndroid.show("正在开发中,敬请期待...", 1);
     }
@@ -34,11 +40,11 @@ export default class Common extends Component<Props> {
 
   render() {
     const data = [
-      { id: "1", title: "通用事件", page: "Swipe" },
-      { id: "2", title: "通用属性", page: "" },
-      { id: "3", title: "通用样式", page: "" },
-      { id: "4", title: "通用动画", page: "" },
-      { id: "5", title: "通用渐变", page: "" }
+      { id: "1", title: "分享", page: "ShareAndroid" },
+      { id: "2", title: "弹窗", page: "AlertAndroid" },
+      { id: "3", title: "打开网页", page: "WebView" },
+      { id: "4", title: "通知消息", page: "" },
+      { id: "5", title: "震动", page: "" }
     ];
     return (
       <FlatList

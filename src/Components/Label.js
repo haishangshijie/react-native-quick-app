@@ -18,6 +18,11 @@ const styles = StyleSheet.create({
 
 type Props = {};
 export default class Label extends Component<Props> {
+  static navigationOptions = {
+    title: "Label",
+    gesturesEnabled: true
+  };
+
   constructor(props: Props) {
     super(props);
     this.state = {};

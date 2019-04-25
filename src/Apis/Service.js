@@ -12,9 +12,9 @@ const styles = StyleSheet.create({
 });
 
 type Props = {};
-export default class Common extends Component<Props> {
+export default class Service extends Component<Props> {
   static navigationOptions = {
-    title: "通用组件",
+    title: "厂商服务",
     gesturesEnabled: true
   };
 
@@ -34,11 +34,10 @@ export default class Common extends Component<Props> {
 
   render() {
     const data = [
-      { id: "1", title: "通用事件", page: "Swipe" },
-      { id: "2", title: "通用属性", page: "" },
-      { id: "3", title: "通用样式", page: "" },
-      { id: "4", title: "通用动画", page: "" },
-      { id: "5", title: "通用渐变", page: "" }
+      { id: "1", title: "推送", page: "" },
+      { id: "2", title: "第三方支付", page: "" },
+      { id: "3", title: "统计", page: "" },
+      { id: "4", title: "账号", page: "" }
     ];
     return (
       <FlatList

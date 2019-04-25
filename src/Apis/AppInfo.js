@@ -17,13 +17,13 @@ import DeviceInfo from "react-native-device-info";
 
 const styles = StyleSheet.create({
   scroll: {
-    flex: 1
+    flex: 1,
+    backgroundColor: "#F5FCFF"
   },
   container: {
     marginTop: 30,
     justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    alignItems: "center"
   },
   welcome: {
     fontSize: 20,
@@ -50,7 +50,12 @@ const styles = StyleSheet.create({
 });
 
 type Props = {};
-export default class App extends Component<Props> {
+export default class AlertAndroid extends Component<Props> {
+  static navigationOptions = {
+    title: "应用信息",
+    gesturesEnabled: true
+  };
+
   constructor(props: Props) {
     super(props);
     this.state = {

@@ -50,6 +50,11 @@ const styles = StyleSheet.create({
 
 type Props = {};
 export default class Qrcode extends Component<Props> {
+  static navigationOptions = {
+    title: "二维码",
+    gesturesEnabled: true
+  };
+
   constructor(props: Props) {
     super(props);
     this.state = {

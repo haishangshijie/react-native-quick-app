@@ -50,6 +50,11 @@ const styles = StyleSheet.create({
 
 type Props = {};
 export default class Div extends Component<Props> {
+  static navigationOptions = {
+    title: "Div",
+    gesturesEnabled: true
+  };
+
   constructor(props: Props) {
     super(props);
     this.state = {};

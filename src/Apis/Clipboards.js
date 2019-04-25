@@ -49,6 +49,11 @@ const styles = StyleSheet.create({
 
 type Props = {};
 export default class Clipboards extends Component<Props> {
+  static navigationOptions = {
+    title: "剪贴板",
+    gesturesEnabled: true
+  };
+
   constructor(props: Props) {
     super(props);
     this.state = {

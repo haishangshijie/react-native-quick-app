@@ -26,6 +26,11 @@ const styles = StyleSheet.create({
 
 type Props = {};
 export default class Textarea extends Component<Props> {
+  static navigationOptions = {
+    title: "Textarea",
+    gesturesEnabled: true
+  };
+
   constructor(props: Props) {
     super(props);
     this.state = {

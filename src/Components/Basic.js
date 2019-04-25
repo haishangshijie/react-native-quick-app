@@ -6,13 +6,18 @@ import TextCell from "../Common/TextCell";
 const styles = StyleSheet.create({
   flatlist: {
     flex: 1,
-    margin: 10,
+    padding: 10,
     backgroundColor: "#F5FCFF"
   }
 });
 
 type Props = {};
 export default class Basic extends Component<Props> {
+  static navigationOptions = {
+    title: "基础组件",
+    gesturesEnabled: true
+  };
+
   showAbility = item => () => {
     if (item.page) {
       navigate(item.page);

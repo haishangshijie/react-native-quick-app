@@ -22,11 +22,11 @@ type Props = {
   url: String
 };
 export default class App extends Component<Props> {
-  // static navigationOptions = ({ navigation }) => {
-  //   return {
-  //     title: navigation.getParam('title'),
-  //   };
-  // };
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: navigation.getParam("title")
+    };
+  };
 
   constructor(props: Props) {
     super(props);

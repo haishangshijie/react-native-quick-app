@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 44,
     margin: 15,
-    backgroundColor: "blue",
+    backgroundColor: "green",
     justifyContent: "center"
   },
   btnText: {
@@ -55,9 +55,9 @@ const styles = StyleSheet.create({
 
 type Props = {};
 export default class App extends Component<Props> {
-  // static navigationOptions = {
-  //     title: '网页跳转',
-  // };
+  static navigationOptions = {
+    title: "网页网址"
+  };
 
   constructor(props: Props) {
     super(props);

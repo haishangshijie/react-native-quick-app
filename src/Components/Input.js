@@ -45,6 +45,11 @@ const styles = StyleSheet.create({
 
 type Props = {};
 export default class Input extends Component<Props> {
+  static navigationOptions = {
+    title: "Input",
+    gesturesEnabled: true
+  };
+
   constructor(props: Props) {
     super(props);
     this.state = {

@@ -6,13 +6,18 @@ import TextCell from "../Common/TextCell";
 const styles = StyleSheet.create({
   flatlist: {
     flex: 1,
-    margin: 10,
+    padding: 10,
     backgroundColor: "#F5FCFF"
   }
 });
 
 type Props = {};
 export default class Other extends Component<Props> {
+  static navigationOptions = {
+    title: "其他组件",
+    gesturesEnabled: true
+  };
+
   showAbility = item => () => {
     if (item.page) {
       if (item.page === "WebView") {

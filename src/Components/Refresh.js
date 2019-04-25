@@ -18,6 +18,11 @@ const styles = StyleSheet.create({
 
 type Props = {};
 export default class Refresh extends Component<Props> {
+  static navigationOptions = {
+    title: "List",
+    gesturesEnabled: true
+  };
+
   constructor(props: Props) {
     super(props);
     this.state = {

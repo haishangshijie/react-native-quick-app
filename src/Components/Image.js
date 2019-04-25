@@ -14,6 +14,11 @@ const styles = StyleSheet.create({
 
 type Props = {};
 export default class Image extends Component<Props> {
+  static navigationOptions = {
+    title: "Image",
+    gesturesEnabled: true
+  };
+
   render() {
     return (
       <View style={styles.container}>
