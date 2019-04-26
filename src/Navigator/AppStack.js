@@ -11,6 +11,7 @@ import Clipboards from "../Apis/Clipboards";
 import DeviceInfo from "../Apis/DeviceInfo";
 import Interaction from "../Apis/Interaction";
 import Location from "../Apis/Location";
+import Media from "../Apis/Media";
 import NetWorkInfo from "../Apis/NetWorkInfo";
 import OpenUrl from "../Apis/OpenUrl";
 import Qrcode from "../Apis/Qrcode";
@@ -25,6 +26,8 @@ import Web from "../Apis/Web";
 import WebView from "../Apis/WebView";
 
 // Conponents
+import ActivityIndicators from "../Components/ActivityIndicators";
+import Audios from "../Components/Audios";
 import Basic from "../Components/Basic";
 import Common from "../Components/Common";
 import Container from "../Components/Container";
@@ -35,12 +38,15 @@ import Input from "../Components/Input";
 import Label from "../Components/Label";
 import List from "../Components/List";
 import Other from "../Components/Other";
+import Pickers from "../Components/Pickers";
+import ProgressBar from "../Components/ProgressBar";
 import Refresh from "../Components/Refresh";
 import ScrollTabbar from "../Components/ScrollTabbar";
 import SliderInput from "../Components/SliderInput";
 import Swipe from "../Components/Swipe";
 import SwitchInput from "../Components/SwitchInput";
 import Textarea from "../Components/Textarea";
+import Videos from "../Components/Videos";
 
 // Layout
 import Timer from "../Layout/Timer";
@@ -57,6 +63,7 @@ export default createStackNavigator(
     DeviceInfo: paramsToProps(DeviceInfo),
     Interaction: paramsToProps(Interaction),
     Location: paramsToProps(Location),
+    Media: paramsToProps(Media),
     NetWorkInfo: paramsToProps(NetWorkInfo),
     OpenUrl: paramsToProps(OpenUrl),
     Qrcode: paramsToProps(Qrcode),
@@ -71,6 +78,8 @@ export default createStackNavigator(
     WebView: paramsToProps(WebView),
 
     // Conponents
+    ActivityIndicators: paramsToProps(ActivityIndicators),
+    Audios: paramsToProps(Audios),
     Basic: paramsToProps(Basic),
     Common: paramsToProps(Common),
     Container: paramsToProps(Container),
@@ -81,12 +90,15 @@ export default createStackNavigator(
     Label: paramsToProps(Label),
     List: paramsToProps(List),
     Other: paramsToProps(Other),
+    Pickers: paramsToProps(Pickers),
+    ProgressBar: paramsToProps(ProgressBar),
     Refresh: paramsToProps(Refresh),
     ScrollTabbar: paramsToProps(ScrollTabbar),
     SliderInput: paramsToProps(SliderInput),
     Swipe: paramsToProps(Swipe),
     SwitchInput: paramsToProps(SwitchInput),
     Textarea: paramsToProps(Textarea),
+    Videos: paramsToProps(Videos),
 
     // Layout
     Timer: paramsToProps(Timer)

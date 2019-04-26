@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 });
 
 type Props = {};
-export default class App extends Component<Props> {
+export default class Main extends Component<Props> {
   showAbility = item => () => {
     if (item.page) {
       if (item.page === "WebView") {

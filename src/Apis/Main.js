@@ -22,7 +22,10 @@ const styles = StyleSheet.create({
 });
 
 type Props = {};
-export default class App extends Component<Props> {
+export default class Main extends Component<Props> {
+  static navigationOptions = {
+    header: null
+  };
   showAbility = item => () => {
     if (item.page) {
       navigate(item.page);
@@ -51,7 +54,7 @@ export default class App extends Component<Props> {
       { id: "5", title: "存储数据", icon: "component", page: "Storage" },
       { id: "6", title: "系统能力", icon: "component", page: "Ability" },
       { id: "7", title: "安全算法", icon: "component", page: "Security" },
-      { id: "8", title: "声音音频", icon: "component", page: "" },
+      { id: "8", title: "音频视频", icon: "component", page: "Media" },
       { id: "9", title: "厂商服务", icon: "component", page: "Service" }
     ];
     return (

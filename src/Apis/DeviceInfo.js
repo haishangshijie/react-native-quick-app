@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
 });
 
 type Props = {};
-export default class App extends Component<Props> {
+export default class DeviceInfos extends Component<Props> {
   static navigationOptions = {
     title: "设备信息",
     gesturesEnabled: true

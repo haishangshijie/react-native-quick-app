@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 });
 
 type Props = {};
-export default class AlertAndroid extends Component<Props> {
+export default class AppInfo extends Component<Props> {
   static navigationOptions = {
     title: "应用信息",
     gesturesEnabled: true

@@ -11,11 +11,11 @@ import {
   Text,
   View,
   Alert,
-  Modal,
   ToastAndroid,
   TouchableOpacity
 } from "react-native";
 import DeviceInfo from "react-native-device-info";
+import Modal from "react-native-modal";
 import V from "../Variables";
 
 const styles = StyleSheet.create({
@@ -37,22 +37,15 @@ const styles = StyleSheet.create({
     color: "white"
   },
   modal: {
-    // marginTop: (V.V.pgHeight - 44 * 5) / 2,
-    // marginLeft: V.V.pgWidth * 0.1,
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "rgba(245, 245, 245, 0.2)"
+    alignItems: "center"
   },
   modalView: {
-    // marginTop: (V.V.pgHeight - 44 * 5) / 2,
-    // marginLeft: V.V.pgWidth * 0.1,
     height: 44 * 5,
     justifyContent: "center",
     alignItems: "center",
-    width: V.V.pgWidth * 0.8,
-    backgroundColor: "rgba(245, 245, 245, 0.2)"
-    // backgroundColor: "#ccc"
+    width: V.V.pgWidth * 0.8
   },
   modalBtn: {
     width: V.V.pgWidth * 0.8,
@@ -163,12 +156,14 @@ export default class AlertAndroid extends Component<Props> {
           <Text style={styles.btnText}>显示上下文菜单</Text>
         </TouchableOpacity>
         <Modal
-          animationType="fade"
-          transparent={true}
-          transparentColor="#ccc"
-          visible={this.state.isShow}
-          onRequestClose={() => {
-            console.log("Modal has been closed.");
+          isVisible={this.state.isShow}
+          backdropColor="black"
+          backdropOpacity={0.6}
+          onBackButtonPress={() => {
+            this.setState({ isShow: false });
+          }}
+          onBackdropPress={() => {
+            this.setState({ isShow: false });
           }}
         >
           <View style={styles.modal}>

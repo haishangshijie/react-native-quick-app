@@ -37,7 +37,7 @@ export default class Common extends Component<Props> {
       { id: "1", title: "通用事件", page: "Swipe" },
       { id: "2", title: "通用属性", page: "" },
       { id: "3", title: "通用样式", page: "" },
-      { id: "4", title: "通用动画", page: "" },
+      { id: "4", title: "通用动画", page: "ActivityIndicators" },
       { id: "5", title: "通用渐变", page: "" }
     ];
     return (

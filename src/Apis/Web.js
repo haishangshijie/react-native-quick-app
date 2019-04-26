@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
 });
 
 type Props = {};
-export default class App extends Component<Props> {
+export default class Web extends Component<Props> {
   static navigationOptions = {
     title: "网页网址"
   };

@@ -12,9 +12,9 @@ const styles = StyleSheet.create({
 });
 
 type Props = {};
-export default class Basic extends Component<Props> {
+export default class Media extends Component<Props> {
   static navigationOptions = {
-    title: "基础组件",
+    title: "音频视频",
     gesturesEnabled: true
   };
 
@@ -34,11 +34,8 @@ export default class Basic extends Component<Props> {
 
   render() {
     const data = [
-      { id: "1", title: "image", page: "Image" },
-      { id: "2", title: "progress", page: "ProgressBar" },
-      { id: "3", title: "rating", page: "" },
-      { id: "4", title: "span", page: "" },
-      { id: "5", title: "text", page: "Label" }
+      { id: "1", title: "音频", page: "Audios" },
+      { id: "2", title: "视频", page: "Videos" }
     ];
     return (
       <FlatList

@@ -55,7 +55,7 @@ export default class Main extends Component<Props> {
       { id: "2", title: "容器组件", icon: "component", page: "Container" },
       { id: "3", title: "基础组件", icon: "component", page: "Basic" },
       { id: "4", title: "表单组件", icon: "component", page: "Form" },
-      { id: "5", title: "媒体组件", icon: "component", page: "" },
+      { id: "5", title: "媒体组件", icon: "component", page: "Videos" },
       { id: "6", title: "其他组件", icon: "component", page: "Other" }
     ];
     return (

@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 type Props = {
   url: String
 };
-export default class App extends Component<Props> {
+export default class WebViews extends Component<Props> {
   static navigationOptions = ({ navigation }) => {
     return {
       title: navigation.getParam("title")

@@ -138,6 +138,8 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-audio')
+    implementation project(':react-native-video')
     implementation project(':react-native-sensor-manager')
     implementation project(':react-native-vector-icons')
     implementation project(':react-native-gesture-handler')

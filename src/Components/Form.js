@@ -36,7 +36,7 @@ export default class Form extends Component<Props> {
     const data = [
       { id: "1", title: "input", page: "Input" },
       { id: "2", title: "label", page: "Label" },
-      { id: "3", title: "picker", page: "" },
+      { id: "3", title: "picker", page: "Pickers" },
       { id: "4", title: "select", page: "" },
       { id: "5", title: "slider", page: "SliderInput" },
       { id: "6", title: "switch", page: "SwitchInput" },
