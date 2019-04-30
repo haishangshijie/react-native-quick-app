@@ -30,5 +30,8 @@ export default {
 
   // Dialog
   dialogBorderRadius: 10,
-  dialogCloseBtnColor: "#ffffff"
+  dialogCloseBtnColor: "#ffffff",
+
+  // color
+  primaryColor: "#ccc"
 };

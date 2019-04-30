@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import { FlatList, StyleSheet, ToastAndroid } from "react-native";
 import { navigate } from "../Navigator";
 import TextCell from "../Common/TextCell";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
+import V from "../Variables";
 
 const styles = StyleSheet.create({
   flatlist: {
     flex: 1,
     padding: 10,
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   }
 });
 
@@ -15,7 +17,8 @@ type Props = {};
 export default class Ability extends Component<Props> {
   static navigationOptions = {
     title: "系统能力",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   showAbility = item => () => {
@@ -44,7 +47,7 @@ export default class Ability extends Component<Props> {
       { id: "8", title: "电话短信", page: "OpenUrl" },
       { id: "9", title: "屏幕亮度", page: "" },
       { id: "10", title: "系统音量", page: "" },
-      { id: "11", title: "录音", page: "" }
+      { id: "11", title: "录音", page: "Audios" }
     ];
     return (
       <FlatList

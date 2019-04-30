@@ -7,14 +7,16 @@ import {
   ScrollView,
   TouchableOpacity
 } from "react-native";
+import V from "../Variables";
 
 const styles = StyleSheet.create({
   container: {
     height: 50,
+    margin: 10,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF",
-    borderBottomColor: "#ccc",
+    backgroundColor: "white",
+    borderBottomColor: "white",
     borderBottomWidth: 1
   },
   text: {

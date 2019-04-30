@@ -15,11 +15,13 @@ import {
   TouchableOpacity
 } from "react-native";
 import DeviceInfo from "react-native-device-info";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
+import V from "../Variables";
 
 const styles = StyleSheet.create({
   scroll: {
     flex: 1,
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   container: {
     marginTop: 30,
@@ -54,7 +56,8 @@ type Props = {};
 export default class DeviceInfos extends Component<Props> {
   static navigationOptions = {
     title: "设备信息",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {
@@ -125,9 +128,9 @@ export default class DeviceInfos extends Component<Props> {
       deviceInfo: information
     });
 
-    DeviceInfo.getBatteryLevel().then(level => {
-      this.setState({ batteryLevel: level });
-    });
+    // DeviceInfo.getBatteryLevel().then(level => {
+    //   this.setState({ batteryLevel: level });
+    // });
     DeviceInfo.getIPAddress().then(address => {
       this.setState({ IPAddress: address });
     });
@@ -137,9 +140,9 @@ export default class DeviceInfos extends Component<Props> {
     DeviceInfo.isAirPlaneMode().then(airPlaneModeOn => {
       this.setState({ isAirPlaneMode: airPlaneModeOn ? "是" : "否" });
     });
-    DeviceInfo.isBatteryCharging().then(charging => {
-      this.setState({ isBatteryCharging: charging ? "是" : "否" });
-    });
+    // DeviceInfo.isBatteryCharging().then(charging => {
+    //   this.setState({ isBatteryCharging: charging ? "是" : "否" });
+    // });
     DeviceInfo.isPinOrFingerprintSet()(isSet => {
       this.setState({ isPinOrFingerprintSet: isSet ? "是" : "否" });
     });
@@ -175,15 +178,15 @@ export default class DeviceInfos extends Component<Props> {
             <View />
           ) : (
             <View style={[styles.container, { marginTop: 10 }]}>
-              <Text style={styles.info}>{`电池电量:  ${batteryLevel}`}</Text>
+              {/* <Text style={styles.info}>{`电池电量:  ${batteryLevel}`}</Text> */}
               <Text style={styles.info}>{`IP地址:  ${IPAddress}`}</Text>
               <Text style={styles.info}>{`MAC地址:  ${MACAddress}`}</Text>
               <Text
                 style={styles.info}
               >{`是否是飞行模式:  ${isAirPlaneMode}`}</Text>
-              <Text
+              {/* <Text
                 style={styles.info}
-              >{`是否在充电中:  ${isBatteryCharging}`}</Text>
+              >{`是否在充电中:  ${isBatteryCharging}`}</Text> */}
               <Text
                 style={styles.info}
               >{`解锁类型:  ${isPinOrFingerprintSet}`}</Text>

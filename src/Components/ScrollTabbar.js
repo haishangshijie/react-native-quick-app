@@ -13,13 +13,15 @@ import ScrollableTabView, {
 import ItemCell from "../Common/ItemCell";
 import RowCell from "../Common/RowCell";
 import FlowCell from "../Common/FlowCell";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
+import V from "../Variables";
 
 const styles = StyleSheet.create({
   base: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   container: {
     flex: 1,
@@ -42,7 +44,8 @@ type Props = {};
 export default class ScrollTabBar extends Component<Props> {
   static navigationOptions = {
     title: "Tabbar",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

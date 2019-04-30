@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { Text, View, Switch, StyleSheet } from "react-native";
 import V from "../Variables";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   sliderView: {
     flexDirection: "row"
@@ -24,7 +25,8 @@ type Props = {};
 export default class SwitchInput extends Component<Props> {
   static navigationOptions = {
     title: "Switch",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

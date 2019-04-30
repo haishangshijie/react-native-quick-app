@@ -8,13 +8,15 @@ import {
   TouchableOpacity
 } from "react-native";
 import QRCode from "react-native-qrcode";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
+import V from "../Variables";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   input: {
     width: 200,
@@ -23,7 +25,7 @@ const styles = StyleSheet.create({
     color: "#333",
     textAlign: "center",
     borderRadius: 5,
-    backgroundColor: "#ccc",
+    backgroundColor: "white",
     marginTop: 50
     // marginBottom: 20
   },
@@ -51,7 +53,8 @@ type Props = {};
 export default class Clipboards extends Component<Props> {
   static navigationOptions = {
     title: "剪贴板",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

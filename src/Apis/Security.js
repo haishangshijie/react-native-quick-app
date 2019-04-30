@@ -16,6 +16,8 @@ import {
 } from "react-native";
 import DeviceInfo from "react-native-device-info";
 import "jsencrypt";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
+import V from "../Variables";
 
 // 公钥
 const PUB_KEY =
@@ -46,7 +48,7 @@ const PRIV_KEY =
 const styles = StyleSheet.create({
   scroll: {
     flex: 1,
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   container: {
     marginTop: 30,
@@ -69,7 +71,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "#333",
     borderRadius: 5,
-    backgroundColor: "#ccc",
+    backgroundColor: "white",
     marginBottom: 20
   },
   button: {
@@ -90,7 +92,8 @@ type Props = {};
 export default class Security extends Component<Props> {
   static navigationOptions = {
     title: "安全算法",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

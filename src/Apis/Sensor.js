@@ -10,11 +10,13 @@ import {
 } from "react-native";
 import Geolocation from "Geolocation";
 import { SensorManager } from "NativeModules";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
+import V from "../Variables";
 
 const styles = StyleSheet.create({
   scroll: {
     flex: 1,
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   container: {
     // flex: 1,
@@ -47,7 +49,8 @@ type Props = {};
 export default class Sensor extends Component<Props> {
   static navigationOptions = {
     title: "传感器",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

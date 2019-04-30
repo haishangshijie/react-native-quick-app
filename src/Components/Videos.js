@@ -19,6 +19,7 @@ import {
 import Video from "react-native-video";
 import Icon from "react-native-vector-icons/FontAwesome";
 import V from "../Variables";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
 
 const styles = StyleSheet.create({
   container: {
@@ -60,6 +61,7 @@ const styles = StyleSheet.create({
   },
   progress: {
     flex: 1,
+    paddingHorizontal: 10,
     flexDirection: "row",
     borderRadius: 3,
     overflow: "hidden"
@@ -85,7 +87,7 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   volumeControl: {
-    fontSize: 12,
+    fontSize: 14,
     color: "#fff",
     // flex: 1,
     flexDirection: "row",
@@ -99,7 +101,7 @@ const styles = StyleSheet.create({
   },
   controlOption: {
     alignSelf: "center",
-    fontSize: 12,
+    fontSize: 14,
     color: "white",
     paddingLeft: 2,
     paddingRight: 2
@@ -110,7 +112,8 @@ type Props = {};
 export default class Videos extends Component<Props> {
   static navigationOptions = {
     title: "视频",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {
@@ -195,6 +198,24 @@ export default class Videos extends Component<Props> {
     return 0;
   }
 
+  playVideo = () => {
+    if (this.state.currentTime === 0) {
+      this.timer_out = setTimeout(() => {
+        console.log("播放视频");
+        this.video.seek(0);
+        this.setState({ paused: false });
+        this.timer_out && clearTimeout(this.timer_out);
+
+        this.timer_in = setTimeout(() => {
+          this.setState({ paused: false });
+          this.timer_in && clearTimeout(this.timer_in);
+        }, 100);
+      }, 100);
+    } else {
+      this.setState({ paused: !this.state.paused });
+    }
+  };
+
   renderRateControl(rate) {
     const isSelected = this.state.rate === rate;
 
@@ -264,35 +285,37 @@ export default class Videos extends Component<Props> {
 
     return (
       <View style={styles.container}>
-        {/* <TouchableOpacity
+        <TouchableOpacity
           style={styles.fullScreen}
-          onPress={() => this.setState({ paused: !this.state.paused })}
-        > */}
-        <Video
-          ref={(ref: Video) => {
-            this.video = ref;
-          }}
-          /* For ExoPlayer */
-          // source={{
-          //   uri:
-          //     "https://gslb.miaopai.com/stream/HNkFfNMuhjRzDd-q6j9qycf54OaKqInVMu0YhQ__.mp4?ssig=bbabfd7684cae53660dc2d4c2103984e&time_stamp=1533631567740&cookie_id=&vend=1&os=3&partner=1&platform=2&cookie_id=&refer=miaopai&scid=HNkFfNMuhjRzDd-q6j9qycf54OaKqInVMu0YhQ__",
-          //   type: "mpd"
-          // }}
-          source={require("../assets/background.mp4")}
-          style={styles.fullScreen}
-          rate={this.state.rate}
-          paused={this.state.paused}
-          volume={this.state.volume}
-          muted={this.state.muted}
-          resizeMode={this.state.resizeMode}
-          onLoad={this.onLoad}
-          onProgress={this.onProgress}
-          onEnd={this.onEnd}
-          onAudioBecomingNoisy={this.onAudioBecomingNoisy}
-          onAudioFocusChanged={this.onAudioFocusChanged}
-          repeat={false}
-        />
-        {/* </TouchableOpacity> */}
+          activeOpacity={1}
+          onPress={this.playVideo}
+        >
+          <Video
+            ref={(ref: Video) => {
+              this.video = ref;
+            }}
+            /* For ExoPlayer */
+            // source={{
+            //   uri:
+            //     "https://gslb.miaopai.com/stream/HNkFfNMuhjRzDd-q6j9qycf54OaKqInVMu0YhQ__.mp4?ssig=bbabfd7684cae53660dc2d4c2103984e&time_stamp=1533631567740&cookie_id=&vend=1&os=3&partner=1&platform=2&cookie_id=&refer=miaopai&scid=HNkFfNMuhjRzDd-q6j9qycf54OaKqInVMu0YhQ__",
+            //   type: "mpd"
+            // }}
+            source={require("../assets/background.mp4")}
+            // source={{ uri: "/sdcard/RPK/background.mp4" }}
+            style={styles.fullScreen}
+            rate={this.state.rate}
+            paused={this.state.paused}
+            volume={this.state.volume}
+            muted={this.state.muted}
+            resizeMode={this.state.resizeMode}
+            onLoad={this.onLoad}
+            onProgress={this.onProgress}
+            onEnd={this.onEnd}
+            onAudioBecomingNoisy={this.onAudioBecomingNoisy}
+            onAudioFocusChanged={this.onAudioFocusChanged}
+            repeat={false}
+          />
+        </TouchableOpacity>
         {/* <View style={styles.textStyle}>
           <Text style={styles.volumeControl}>
             {this.formatTime(this.state.duration - this.state.currentTime)}
@@ -333,14 +356,10 @@ export default class Videos extends Component<Props> {
 
           <View style={styles.trackingControls}>
             <View style={styles.progress}>
-              <TouchableOpacity
-                onPress={() => {
-                  this.setState({ paused: !this.state.paused });
-                }}
-              >
+              <TouchableOpacity onPress={this.playVideo}>
                 <Icon
                   color="white"
-                  size={15}
+                  size={20}
                   name={this.state.paused ? "play" : "pause"}
                   // style={{ marginRight: 5 }}
                 />

@@ -7,6 +7,7 @@ import {
   ToastAndroid
 } from "react-native";
 import V from "../Variables";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
 
 const colorArray = [
   "white",
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   text: {
     width: 160,
@@ -51,6 +52,7 @@ export default class Swipe extends Component<Props> {
   static navigationOptions = {
     title: "Swipe",
     gesturesEnabled: true
+    // headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

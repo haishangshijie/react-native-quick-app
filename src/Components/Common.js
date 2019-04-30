@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { FlatList, StyleSheet, ToastAndroid } from "react-native";
 import { navigate } from "../Navigator";
+import V from "../Variables";
 import TextCell from "../Common/TextCell";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
 
 const styles = StyleSheet.create({
   flatlist: {
     flex: 1,
     padding: 10,
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   }
 });
 
@@ -15,7 +17,8 @@ type Props = {};
 export default class Common extends Component<Props> {
   static navigationOptions = {
     title: "通用组件",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   showAbility = item => () => {

@@ -16,13 +16,14 @@ import {
   ToastAndroid
 } from "react-native";
 import V from "../Variables";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   text: {
     flex: 1,
@@ -31,7 +32,6 @@ const styles = StyleSheet.create({
     color: "white"
   },
   viewRow: {
-    // width: V.V.pgWidth,
     height: 30,
     marginBottom: 15,
     flexDirection: "row"
@@ -52,7 +52,8 @@ type Props = {};
 export default class Div extends Component<Props> {
   static navigationOptions = {
     title: "Div",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

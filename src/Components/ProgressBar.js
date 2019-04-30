@@ -5,19 +5,23 @@ import {
   StyleSheet,
   View
 } from "react-native";
+import V from "../Variables";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "space-evenly",
-    padding: 10
+    padding: 10,
+    backgroundColor: V.V.primaryColor
   }
 });
 
 export default class ProgressBar extends Component {
   static navigationOptions = {
     title: "Progress",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   render() {

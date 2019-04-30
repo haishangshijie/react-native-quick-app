@@ -7,6 +7,7 @@ import {
   StyleSheet,
   TouchableOpacity
 } from "react-native";
+import V from "../Variables";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
 const styles = StyleSheet.create({
@@ -14,7 +15,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   rowView: {
     marginBottom: 10,
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
     color: "#333",
     textAlign: "center",
     borderRadius: 5,
-    backgroundColor: "#ccc"
+    backgroundColor: "white"
   },
   text: {
     color: "#333",
@@ -47,7 +48,8 @@ type Props = {};
 export default class Input extends Component<Props> {
   static navigationOptions = {
     title: "Input",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <Icon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

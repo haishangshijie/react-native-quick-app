@@ -7,12 +7,14 @@ import {
   ActivityIndicator
 } from "react-native";
 import ItemCell from "../Common/ItemCell";
+import V from "../Variables";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "column",
-    backgroundColor: "#fff"
+    backgroundColor: V.V.primaryColor
   }
 });
 
@@ -20,7 +22,8 @@ type Props = {};
 export default class Refresh extends Component<Props> {
   static navigationOptions = {
     title: "List",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

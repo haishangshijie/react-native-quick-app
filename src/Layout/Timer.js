@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { Text, View, Button, TextInput, StyleSheet } from "react-native";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
+import V from "../Variables";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   inputView: {
     marginBottom: 50,
@@ -19,7 +21,7 @@ const styles = StyleSheet.create({
     color: "#333",
     textAlign: "center",
     borderRadius: 5,
-    backgroundColor: "#ccc"
+    backgroundColor: "white"
   },
   second: {
     color: "#333"
@@ -30,7 +32,8 @@ type Props = {};
 export default class Timer extends Component<Props> {
   static navigationOptions = {
     title: "定时器",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

@@ -12,25 +12,28 @@ import MainCell from "../Common/MainCell";
 import V from "../Variables";
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
-  },
-  flatlist: {
-    margin: 10
-  },
   intro: {
     fontSize: 16,
     color: "#666",
     margin: 30,
-    marginTop: 50
+    textAlign: "center"
+  },
+  flatlist: {
+    flex: 1,
+    padding: 10,
+    backgroundColor: V.V.primaryColor
+  },
+  footer: {
+    height: 30
   }
 });
 
 type Props = {};
 export default class Main extends Component<Props> {
+  componentWillMount() {
+    console.log("V ", V);
+  }
+
   showAbility = item => () => {
     if (item.page) {
       navigate(item.page);
@@ -59,18 +62,19 @@ export default class Main extends Component<Props> {
       { id: "6", title: "其他组件", icon: "component", page: "Other" }
     ];
     return (
-      <View style={styles.container}>
-        <Text style={styles.intro}>以下展示快应用组件相关能力, 仅供参考</Text>
-        <FlatList
-          style={styles.flatlist}
-          renderItem={this.renderItem}
-          keyExtractor={this.keyExtractor}
-          data={data}
-          refreshing={false}
-          initialNumToRender={6}
-          removeClippedSubviews={true}
-        />
-      </View>
+      <FlatList
+        style={styles.flatlist}
+        renderItem={this.renderItem}
+        keyExtractor={this.keyExtractor}
+        data={data}
+        refreshing={false}
+        initialNumToRender={6}
+        removeClippedSubviews={true}
+        ListHeaderComponent={
+          <Text style={styles.intro}>以下展示快应用组件相关能力, 仅供参考</Text>
+        }
+        ListFooterComponent={<View style={styles.footer} />}
+      />
     );
   }
 }

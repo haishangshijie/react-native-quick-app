@@ -17,6 +17,7 @@ import {
 import DeviceInfo from "react-native-device-info";
 import Modal from "react-native-modal";
 import V from "../Variables";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
 
 const styles = StyleSheet.create({
   container: {
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
     width: V.V.pgWidth * 0.8,
     height: 44,
     justifyContent: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   modalText: {
     fontSize: 16,
@@ -64,7 +65,8 @@ type Props = {};
 export default class AlertAndroid extends Component<Props> {
   static navigationOptions = {
     title: "弹窗",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

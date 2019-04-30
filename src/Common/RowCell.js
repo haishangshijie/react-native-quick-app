@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
+import V from "../Variables";
 
 const styles = StyleSheet.create({
   container: {
     width: 160,
     height: 240,
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor,
+    borderBottomColor: "white",
+    borderBottomWidth: 1
   },
   icon: {
     padding: 10

@@ -14,11 +14,13 @@ import {
   TouchableOpacity
 } from "react-native";
 import DeviceInfo from "react-native-device-info";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
+import V from "../Variables";
 
 const styles = StyleSheet.create({
   scroll: {
     flex: 1,
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   container: {
     marginTop: 30,
@@ -53,7 +55,8 @@ type Props = {};
 export default class AppInfo extends Component<Props> {
   static navigationOptions = {
     title: "应用信息",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

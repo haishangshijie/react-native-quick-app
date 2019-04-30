@@ -7,13 +7,15 @@ import {
   ToastAndroid
 } from "react-native";
 import Geolocation from "Geolocation";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
+import V from "../Variables";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   button: {
     width: 200,
@@ -39,7 +41,8 @@ type Props = {};
 export default class Location extends Component<Props> {
   static navigationOptions = {
     title: "地理位置",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

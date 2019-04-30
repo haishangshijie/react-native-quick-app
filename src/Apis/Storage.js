@@ -9,12 +9,13 @@ import {
   TouchableOpacity
 } from "react-native";
 import V from "../Variables";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   section: {
     alignItems: "center",
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "#333",
     borderRadius: 5,
-    backgroundColor: "#ccc",
+    backgroundColor: "white",
     marginBottom: 20
   },
   button: {
@@ -59,7 +60,8 @@ type Props = {};
 export default class Storage extends Component<Props> {
   static navigationOptions = {
     title: "存储数据",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

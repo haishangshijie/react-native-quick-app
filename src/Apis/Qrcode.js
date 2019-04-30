@@ -9,12 +9,13 @@ import {
 } from "react-native";
 import QRCode from "react-native-qrcode";
 import V from "../Variables";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   input: {
     width: 200,
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
     color: "#333",
     textAlign: "center",
     borderRadius: 5,
-    backgroundColor: "#ccc",
+    backgroundColor: "white",
     marginTop: 50
     // marginBottom: 20
   },
@@ -52,7 +53,8 @@ type Props = {};
 export default class Qrcode extends Component<Props> {
   static navigationOptions = {
     title: "二维码",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     width: itemWidth,
     marginLeft: 10,
     marginBottom: 10,
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   icon: {
     // paddingLeft: (itemWidth - 100) / 2,

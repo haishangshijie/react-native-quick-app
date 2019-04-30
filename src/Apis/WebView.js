@@ -8,13 +8,15 @@
 
 import React, { Component } from "react";
 import { StyleSheet, WebView } from "react-native";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
+import V from "../Variables";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   }
 });
 
@@ -24,7 +26,8 @@ type Props = {
 export default class WebViews extends Component<Props> {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: navigation.getParam("title")
+      title: navigation.getParam("title"),
+      headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
     };
   };
 

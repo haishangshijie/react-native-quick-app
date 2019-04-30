@@ -8,13 +8,15 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Share, TouchableOpacity } from "react-native";
 import DeviceInfo from "react-native-device-info";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
+import V from "../Variables";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   button: {
     width: 200,
@@ -34,7 +36,8 @@ type Props = {};
 export default class ShareAndroid extends Component<Props> {
   static navigationOptions = {
     title: "分享",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
+import V from "../Variables";
 
 const styles = StyleSheet.create({
   container: {
@@ -8,7 +9,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor,
+    borderBottomColor: "white",
+    borderBottomWidth: 1
   },
   icon: {
     padding: 10,

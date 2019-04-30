@@ -5,13 +5,16 @@ import V from "../Variables";
 
 const styles = StyleSheet.create({
   container: {
-    width: V.V.pgWidth - 30,
-    height: 44,
+    flex: 1,
+    height: 50,
+    margin: 10,
     marginBottom: 20,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "white"
+    backgroundColor: "white",
+    borderRadius: 5,
+    borderWidth: 1
   },
   text: {
     fontSize: 20,
@@ -41,9 +44,11 @@ export default class MainCell extends Component<Props> {
   render() {
     const { icon, title } = this.props;
     return (
-      <TouchableOpacity style={styles.container} onPress={this.handleCellClick}>
-        {/* <Icon name={icon} size={20} color='#333' /> */}
-        <Text style={styles.text}>{title}</Text>
+      <TouchableOpacity onPress={this.handleCellClick}>
+        <View style={styles.container}>
+          {/* <Icon name={icon} size={20} color='#333' /> */}
+          <Text style={styles.text}>{title}</Text>
+        </View>
       </TouchableOpacity>
     );
   }

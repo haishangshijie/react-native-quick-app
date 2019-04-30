@@ -12,6 +12,8 @@ import ScrollableTabView, {
 import ItemCell from "../Common/ItemCell";
 import RowCell from "../Common/RowCell";
 import FlowCell from "../Common/FlowCell";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
+import V from "../Variables";
 
 const styles = StyleSheet.create({
   base: {
@@ -20,7 +22,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "column",
-    backgroundColor: "#fff"
+    backgroundColor: V.V.primaryColor
   },
   tab: {
     paddingBottom: 0
@@ -38,7 +40,8 @@ type Props = {};
 export default class List extends Component<Props> {
   static navigationOptions = {
     title: "List",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

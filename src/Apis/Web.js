@@ -15,13 +15,15 @@ import {
   TouchableOpacity,
   ToastAndroid
 } from "react-native";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
+import V from "../Variables";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   welcome: {
     fontSize: 16,
@@ -56,7 +58,8 @@ const styles = StyleSheet.create({
 type Props = {};
 export default class Web extends Component<Props> {
   static navigationOptions = {
-    title: "网页网址"
+    title: "网页网址",
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

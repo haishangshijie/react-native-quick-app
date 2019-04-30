@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import Video from "react-native-video";
 import { AudioRecorder, AudioUtils } from "react-native-audio";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
 
 const styles = StyleSheet.create({
   container: {
@@ -45,7 +46,8 @@ const styles = StyleSheet.create({
 
 export default class Audios extends Component {
   static navigationOptions = {
-    title: "音频"
+    title: "音频",
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {
@@ -64,6 +66,7 @@ export default class Audios extends Component {
 
   componentDidMount() {
     AudioRecorder.requestAuthorization().then(isAuthorised => {
+      console.log("audio Permission ", isAuthorised);
       this.setState({ hasPermission: isAuthorised });
 
       if (!isAuthorised) return;
@@ -88,8 +91,9 @@ export default class Audios extends Component {
   }
 
   prepareRecordingPath(audioPath) {
+    console.log("prepareRecordingPath ", audioPath);
     AudioRecorder.prepareRecordingAtPath(audioPath, {
-      SampleRate: 22050,
+      SampleRate: 44100,
       Channels: 1,
       AudioQuality: "Low",
       AudioEncoding: "aac",
@@ -196,15 +200,19 @@ export default class Audios extends Component {
       return;
     }
 
+    console.log("prepareRecordingPath ", this.state.audioPath);
     if (this.state.stoppedRecording) {
       this.prepareRecordingPath(this.state.audioPath);
     }
+    console.log("prepareRecordingPath ", this.state.audioPath);
 
     this.setState({ recording: true, paused: false });
 
+    console.log("recording...");
     try {
       const filePath = await AudioRecorder.startRecording();
     } catch (error) {
+      console.log("recording error ", error);
       console.error(error);
     }
   }

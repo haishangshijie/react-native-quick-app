@@ -9,35 +9,14 @@
 import React, { Component } from "react";
 import { StyleSheet, View, ActivityIndicator } from "react-native";
 import V from "../Variables";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
-  },
-  text: {
-    flex: 1,
-    fontSize: 18,
-    textAlign: "center",
-    color: "white"
-  },
-  viewRow: {
-    // width: V.V.pgWidth,
-    height: 30,
-    marginBottom: 15,
-    flexDirection: "row"
-  },
-  viewLine: {
-    width: V.V.pgWidth,
-    height: 60
-  },
-  bgGreen: {
-    backgroundColor: "green"
-  },
-  bgBlue: {
-    backgroundColor: "blue"
+    backgroundColor: V.V.primaryColor
   }
 });
 
@@ -45,7 +24,8 @@ type Props = {};
 export default class ActivityIndicators extends Component<Props> {
   static navigationOptions = {
     title: "ActivityIndicator",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

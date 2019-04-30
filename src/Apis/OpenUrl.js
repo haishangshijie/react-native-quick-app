@@ -12,11 +12,12 @@ import {
 import QRCode from "react-native-qrcode";
 import V from "../Variables";
 import { navigate } from "../Navigator";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
 
 const styles = StyleSheet.create({
   scroll: {
     flex: 1,
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   container: {
     flex: 1,
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#333",
     borderRadius: 5,
-    backgroundColor: "#ccc",
+    backgroundColor: "white",
     marginBottom: 10
   },
   inputArea: {
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#333",
     borderRadius: 5,
-    backgroundColor: "#ccc"
+    backgroundColor: "white"
   },
   button: {
     width: 280,
@@ -84,7 +85,8 @@ type Props = {};
 export default class OpenUrl extends Component<Props> {
   static navigationOptions = {
     title: "电话短信",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {

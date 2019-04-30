@@ -83,7 +83,7 @@ export default createBottomTabNavigator(
         defaultHandler();
       }
     }),
-    initialRouteName: "ApisMain",
+    initialRouteName: "ComponentsMain",
     tabBarOptions: {
       activeTintColor: "green",
       inactiveTintColor: "grey",

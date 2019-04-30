@@ -6,13 +6,15 @@ import {
   TouchableOpacity,
   NetInfo
 } from "react-native";
+import BackIcon from "react-native-vector-icons/MaterialIcons";
+import V from "../Variables";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: V.V.primaryColor
   },
   button: {
     width: 200,
@@ -38,7 +40,8 @@ type Props = {};
 export default class NetworkInfo extends Component<Props> {
   static navigationOptions = {
     title: "网络状态",
-    gesturesEnabled: true
+    gesturesEnabled: true,
+    headerBackImage: <BackIcon size={30} name="arrow-back" color="black" />
   };
 
   constructor(props: Props) {
