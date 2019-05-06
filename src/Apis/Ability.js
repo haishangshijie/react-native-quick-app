@@ -25,7 +25,7 @@ export default class Ability extends Component<Props> {
     if (item.page) {
       navigate(item.page);
     } else {
-      ToastAndroid.show(" 正在开发中,敬请期待...", 1);
+      ToastAndroid.show("正在开发中,敬请期待...", 1);
     }
   };
 
