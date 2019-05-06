@@ -20,9 +20,12 @@ const styles = StyleSheet.create({
 
 export default createBottomTabNavigator(
   {
-    ComponentsMain,
-    ApisMain,
-    LayoutMain
+    ComponentsMain: {
+      screen: ComponentsMain,
+      navigationOptions: { title: "组件" }
+    },
+    ApisMain: { screen: ApisMain },
+    LayoutMain: { screen: LayoutMain }
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
